@@ -1,9 +1,7 @@
+import RoutesApp from './RoutesApp';
+
 const App = () => {
-  return (
-    <div>
-      <h1 className="bg-gray-main">Hello World!</h1>
-    </div>
-  );
+  return <RoutesApp />;
 };
 
 export default App;
