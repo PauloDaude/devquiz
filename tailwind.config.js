@@ -12,6 +12,9 @@ export default {
       },
       fontFamily: {
         sans: ['Onest', 'sans-serif']
+      },
+      spacing: {
+        
       }
     }
   },

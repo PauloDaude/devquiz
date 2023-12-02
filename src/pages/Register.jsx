@@ -1,10 +1,10 @@
 import Header from '../components/Header';
 
-const Welcome = () => {
+const Register = () => {
   return (
     <div>
-      <Header page="welcome" />
+      <Header />
     </div>
   );
 };
-export default Welcome;
+export default Register;
