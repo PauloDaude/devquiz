@@ -7,10 +7,10 @@ const ContentFooter = ({ page }) => {
       {page === 'welcome' ? (
         <div className="flex flex-col justify-center items-center  w-full">
           <Button style="light" text="Já tenho uma conta" />
-          <Button style="dark" text="Bora cadastrar" />
+          <Button style="dark" text="Bora cadastrar" icon="true" />
         </div>
       ) : page === 'register' ? (
-        <Button style="dark" text="Bora cadastrar" />
+        <Button style="dark" text="Só continuar" />
       ) : (
         <h1>ola</h1>
       )}

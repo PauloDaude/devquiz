@@ -4,15 +4,16 @@ import ContentMain from '../components/ContentMain';
 import ContentNavigation from '../components/ContentNavigation';
 
 const Register = () => {
+  const page = 'register';
   return (
     <>
-      <ContentNavigation page="register" />
+      <ContentNavigation page={page} />
       <ContentHeader
         title="Tá pertin já :)"
         subtitle="Só preencher os dados e pronto"
       />
-      <ContentMain page="register" />
-      <ContentFooter page="register" />
+      <ContentMain page={page} />
+      <ContentFooter page={page} />
     </>
   );
 };
