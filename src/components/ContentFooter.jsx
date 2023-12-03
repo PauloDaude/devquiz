@@ -1,26 +1,22 @@
 import PropTypes from 'prop-types';
-import Button from './Button';
 
-const ContentFooter = ({ page }) => {
+const ContentFooter = ({ children, double = 'false' }) => {
   return (
     <div className="flex flex-1 w-full p-4 items-end justify-center">
-      {page === 'welcome' ? (
+      {double === 'true' ? (
         <div className="flex flex-col justify-center items-center  w-full">
-          <Button style="light" text="Já tenho uma conta" />
-          <Button style="dark" text="Bora cadastrar" icon="true" />
+          {children}
         </div>
-      ) : page === 'register' ? (
-        <Button style="dark" text="Só continuar" />
       ) : (
-        <h1>ola</h1>
+        { children }
       )}
     </div>
   );
 };
 
 ContentFooter.propTypes = {
-  page: PropTypes.string
-  // ou PropTypes.oneOf(['welcome', 'normal'])
+  double: PropTypes.oneOf(['true', 'false']),
+  children: PropTypes.node
 };
 
 export default ContentFooter;
