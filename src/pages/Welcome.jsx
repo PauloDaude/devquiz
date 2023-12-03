@@ -9,7 +9,7 @@ import Button from '../components/Button';
 const Welcome = () => {
   return (
     <>
-      <ContentNavigation back="true" />
+      <ContentNavigation />
       <ContentHeader
         title="Prove o que sabe com o DevQuiz! 🧠"
         subtitle="Te garanto que tu vai gostar de jogar hehe"

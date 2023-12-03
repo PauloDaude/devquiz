@@ -8,7 +8,7 @@ const ContentFooter = ({ children, double = 'false' }) => {
           {children}
         </div>
       ) : (
-        { children }
+        <>{children}</>
       )}
     </div>
   );
