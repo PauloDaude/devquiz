@@ -7,4 +7,14 @@
   flex-direction: column;
   width: 100vw;
   min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  border: none;
+  outline: none;
 }
