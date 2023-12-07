@@ -7,7 +7,7 @@ import Error from '../assets/error-page.svg';
 const NotFound = () => {
   return (
     <>
-      <Header login="true" />
+      <Header />
 
       <Main>
         <ContentMain>

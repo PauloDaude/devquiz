@@ -17,7 +17,7 @@ import Footer from '../components/Footer';
 const Register = () => {
   return (
     <>
-      <Header />
+      <Header login="true" />
 
       <Main>
         <ContentNavigation back="true" />

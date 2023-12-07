@@ -24,7 +24,7 @@ const Welcome = () => {
 
         <ContentMain>
           <div className="flex">
-            <img src={welcome} className="max-w-[37.5rem]" />
+            <img src={welcome} className="w-full sm:max-w-[37.5rem]" />
           </div>
         </ContentMain>
 
