@@ -10,30 +10,39 @@ import {
   InputName,
   InputPhone
 } from '../components/RegisterFields';
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Footer from '../components/Footer';
 
 const Register = () => {
   return (
     <>
-      <ContentNavigation back="true" />
-      <ContentHeader
-        title="Cria tua conta ae :)"
-        subtitle="Só preencher os dados e pronto"
-      />
+      <Header />
 
-      <div className="flex items-center my-4">
-        <ContentMain>
-          <form className="flex flex-col gap-4 w-full">
-            <InputName label="Nome completo" />
-            <InputDate label="Data de nascimento" />
-            <InputPhone label="Número" />
-            <InputCountry label="País" type="select" />
-          </form>
-        </ContentMain>
-      </div>
+      <Main>
+        <ContentNavigation back="true" />
+        <ContentHeader
+          title="Cria tua conta ae :)"
+          subtitle="Só preencher os dados e pronto"
+        />
 
-      <ContentFooter>
-        <Button style="dark" text="Só continuar" />
-      </ContentFooter>
+        <div className="flex items-center my-4">
+          <ContentMain>
+            <form className="flex flex-col gap-4 w-full">
+              <InputName label="Nome completo" />
+              <InputDate label="Data de nascimento" />
+              <InputPhone label="Número" />
+              <InputCountry label="País" type="select" />
+            </form>
+          </ContentMain>
+        </div>
+
+        <ContentFooter>
+          <Button style="dark" text="Só continuar" />
+        </ContentFooter>
+      </Main>
+
+      <Footer />
     </>
   );
 };
