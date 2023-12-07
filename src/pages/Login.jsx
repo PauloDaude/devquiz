@@ -1,17 +1,24 @@
+import Button from '../components/Button';
+import ContentFooter from '../components/ContentFooter';
 import ContentHeader from '../components/ContentHeader';
 import ContentMain from '../components/ContentMain';
 import ContentNavigation from '../components/ContentNavigation';
 
 const Login = () => {
-  const page = 'login';
   return (
     <>
-      <ContentNavigation page={page} />
+      <ContentNavigation back="true" />
+
       <ContentHeader
-        title="Cria tua conta ae :)"
+        title="Tá pertin já :)"
         subtitle="Só preencher os dados e pronto"
       />
-      <ContentMain page={page} />
+
+      <ContentMain></ContentMain>
+
+      <ContentFooter>
+        <Button icon="false" style="dark" text="Só continuar" />
+      </ContentFooter>
     </>
   );
 };

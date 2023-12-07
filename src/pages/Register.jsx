@@ -9,18 +9,18 @@ import {
   InputDate,
   InputName,
   InputPhone
-} from '../components/FormField';
+} from '../components/RegisterFields';
 
 const Register = () => {
   return (
     <>
       <ContentNavigation back="true" />
       <ContentHeader
-        title="Tá pertin já :)"
+        title="Cria tua conta ae :)"
         subtitle="Só preencher os dados e pronto"
       />
 
-      <div className="flex items-center py-4">
+      <div className="flex items-center my-4">
         <ContentMain>
           <form className="flex flex-col gap-4 w-full">
             <InputName label="Nome completo" />

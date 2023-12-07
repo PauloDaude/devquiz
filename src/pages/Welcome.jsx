@@ -10,15 +10,18 @@ const Welcome = () => {
   return (
     <>
       <ContentNavigation />
+
       <ContentHeader
         title="Prove o que sabe com o DevQuiz! 🧠"
         subtitle="Te garanto que tu vai gostar de jogar hehe"
       />
+
       <ContentMain>
         <div className="flex">
           <img src={welcome} />
         </div>
       </ContentMain>
+
       <ContentFooter double="true">
         <Button style="light" text="Já tenho uma conta" />
         <Button style="dark" text="Bora cadastrar" icon="true" />
