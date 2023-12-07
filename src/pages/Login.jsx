@@ -28,11 +28,11 @@ const Login = () => {
                   name="remember"
                   className="w-4 mr-2 ml-2"
                 />
-                <span className="text-sm">Lembrar senha</span>
+                <p className="text-sm">Lembrar senha</p>
               </div>
             </form>
             <div className="flex flex-col items-center gap-2 mt-10">
-              <span className="text-gray-main">Outra opção de login</span>
+              <p className="text-gray-main">Outra opção de login</p>
               <Button icon="google" style="light" text="Continuar com Google" />
             </div>
           </div>

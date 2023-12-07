@@ -6,11 +6,13 @@ const ContentNavigation = ({ back = 'false' }) => {
   return (
     <div className="flex p-4 items-center justify-start box-border h-14 ">
       {back === 'true' && (
-        <button onClick="">
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </button>
+        <>
+          <button onClick="">
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
+          <div className="hidden md:block ml-2">Voltar</div>
+        </>
       )}
-      <div className="hidden md:block ml-2">Voltar</div>
     </div>
   );
 };

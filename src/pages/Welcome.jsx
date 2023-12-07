@@ -1,3 +1,6 @@
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 import ContentFooter from '../components/ContentFooter';
 import ContentHeader from '../components/ContentHeader';
 import ContentMain from '../components/ContentMain';
@@ -9,6 +12,7 @@ import Button from '../components/Button';
 const Welcome = () => {
   return (
     <>
+      <Header login="true" />
       <ContentNavigation />
 
       <ContentHeader
@@ -18,7 +22,7 @@ const Welcome = () => {
 
       <ContentMain>
         <div className="flex">
-          <img src={welcome} />
+          <img src={welcome} className="max-w-[37.5rem]" />
         </div>
       </ContentMain>
 
@@ -26,6 +30,7 @@ const Welcome = () => {
         <Button style="light" text="Já tenho uma conta" />
         <Button style="dark" text="Bora cadastrar" icon="true" />
       </ContentFooter>
+      <Footer />
     </>
   );
 };

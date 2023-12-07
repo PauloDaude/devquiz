@@ -34,7 +34,7 @@ export const InputPassword = ({ label }) => {
         className="flex flex-wrap text-xs text-gray-label focus-within:text-yellow-main"
         htmlFor="password"
       >
-        <span className="w-full">{label}</span>
+        <p className="w-full">{label}</p>
         <div className="flex justify-between w-full">
           <input
             className="w-full h-auto bg-transparent text-black font-normal text-base"

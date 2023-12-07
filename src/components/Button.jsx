@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+
 import PropTypes from 'prop-types';
 
 const Button = ({ style, text, icon = 'false' }) => {
@@ -10,7 +11,7 @@ const Button = ({ style, text, icon = 'false' }) => {
         {icon === 'google' && (
           <FontAwesomeIcon icon={faGoogle} style={{ color: '#000' }} />
         )}
-        <span className="text-sm">{text}</span>
+        <p className="text-sm">{text}</p>
       </button>
     );
   } else {
