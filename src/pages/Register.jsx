@@ -10,6 +10,7 @@ import {
   InputName,
   InputPhone
 } from '../components/RegisterFields';
+
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Footer from '../components/Footer';
@@ -20,7 +21,7 @@ const Register = () => {
       <Header login="true" />
 
       <Main>
-        <ContentNavigation back="true" />
+        <ContentNavigation back="true" navigation="/welcome" />
         <ContentHeader
           title="Cria tua conta ae :)"
           subtitle="Só preencher os dados e pronto"

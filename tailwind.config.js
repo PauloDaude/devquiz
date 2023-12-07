@@ -18,6 +18,14 @@ export default {
       boxShadow: {
         'gray': '3px 5px 0px #8F8E93',
         'yellow': '3px 5px 0px #FFBB45'
+      },
+      container: {
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+        }
       }
     }
   },

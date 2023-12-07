@@ -1,3 +1,7 @@
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Footer from '../components/Footer';
+
 import Button from '../components/Button';
 import ContentFooter from '../components/ContentFooter';
 import ContentHeader from '../components/ContentHeader';
@@ -5,13 +9,14 @@ import ContentMain from '../components/ContentMain';
 import ContentNavigation from '../components/ContentNavigation';
 
 import { InputEmail, InputPassword } from '../components/LoginFields';
-import Main from '../components/Main';
 
 const Login = () => {
   return (
     <>
-      <ContentNavigation back="true" />
+      <Header login="true" />
+
       <Main>
+        <ContentNavigation back="true" navigation="/welcome" />
         <ContentHeader
           title="Tá pertin já :)"
           subtitle="Só preencher os dados e pronto"
@@ -45,9 +50,11 @@ const Login = () => {
         </div>
 
         <ContentFooter>
-          <Button icon="false" style="dark" text="Só continuar" />
+          <Button icon="false" style="dark" text="Só continuar" navigation="" />
         </ContentFooter>
       </Main>
+
+      <Footer />
     </>
   );
 };

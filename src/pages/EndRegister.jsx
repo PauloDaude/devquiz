@@ -5,26 +5,35 @@ import ContentNavigation from '../components/ContentNavigation';
 
 import end from '../assets/end.svg';
 import Button from '../components/Button';
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Footer from '../components/Footer';
 
 const Welcome = () => {
   return (
     <>
-      <ContentNavigation back="true" />
+      <Header />
 
-      <ContentHeader
-        title="Seja muito bem vindo!"
-        subtitle="Agora é só aproveitar o DevQuiz! 😎"
-      />
+      <Main>
+        <ContentNavigation />
 
-      <ContentMain>
-        <div className="flex">
-          <img src={end} />
-        </div>
-      </ContentMain>
+        <ContentHeader
+          title="Seja muito bem vindo!"
+          subtitle="Agora é só aproveitar o DevQuiz! 😎"
+        />
 
-      <ContentFooter>
-        <Button style="dark" text="Boraaaa!" />
-      </ContentFooter>
+        <ContentMain>
+          <div className="flex">
+            <img src={end} />
+          </div>
+        </ContentMain>
+
+        <ContentFooter>
+          <Button style="dark" text="Boraaaa!" />
+        </ContentFooter>
+      </Main>
+
+      <Footer />
     </>
   );
 };

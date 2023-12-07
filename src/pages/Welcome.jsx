@@ -29,8 +29,13 @@ const Welcome = () => {
         </ContentMain>
 
         <ContentFooter double="true">
-          <Button style="light" text="Já tenho uma conta" />
-          <Button style="dark" text="Bora cadastrar" icon="true" />
+          <Button style="light" text="Já tenho uma conta" navigation="/login" />
+          <Button
+            style="dark"
+            text="Bora cadastrar"
+            icon="true"
+            navigation="/register"
+          />
         </ContentFooter>
       </Main>
       <Footer />
