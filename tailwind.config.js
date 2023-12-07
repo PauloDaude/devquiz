@@ -26,6 +26,11 @@ export default {
           lg: '1024px',
           xl: '1280px',
         }
+      },
+      fontSize: {
+        'base': '1rem',
+        'lg': '1.125rem',
+        'xl': '1.5rem',
       }
     }
   },

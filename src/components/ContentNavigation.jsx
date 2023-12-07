@@ -9,10 +9,10 @@ const ContentNavigation = ({ back = 'false', navigation }) => {
     <div className="flex p-4 items-center justify-start box-border h-14 ">
       {back === 'true' && (
         <>
-          <Link to={navigation}>
+          <Link to={navigation} className="flex flex-row items-center">
             <FontAwesomeIcon icon={faArrowLeft} />
+            <div className="hidden sm:block ml-2">Voltar</div>
           </Link>
-          <div className="hidden sm:block ml-2">Voltar</div>
         </>
       )}
     </div>
