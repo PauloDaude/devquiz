@@ -10,6 +10,8 @@ import ContentNavigation from '../components/ContentNavigation';
 
 import { InputEmail, InputPassword } from '../components/LoginFields';
 
+import LoginImg from '../assets/login.svg';
+
 const Login = () => {
   return (
     <>
@@ -17,41 +19,51 @@ const Login = () => {
 
       <Main>
         <ContentNavigation back="true" navigation="/welcome" />
-        <ContentHeader
-          title="Tá pertin já :)"
-          subtitle="Só preencher os dados e pronto"
-        />
+        <div className="flex flex-col md:flex-row justify-center md:gap-12">
+          <ContentHeader
+            title="Tá pertin já :)"
+            subtitle="Só preencher os dados e pronto"
+            img={LoginImg}
+          />
 
-        <div className="flex items-center my-4">
-          <ContentMain>
-            <div className="flex flex-col w-full">
-              <form className="flex flex-col gap-4 w-full">
-                <InputEmail label="Email" />
-                <InputPassword label="Senha" />
-                <div className="flex">
-                  <input
-                    type="checkbox"
-                    name="remember"
-                    className="w-4 mr-2 ml-2"
-                  />
-                  <p className="text-sm">Lembrar senha</p>
+          <div className="flex flex-col md:mt-14">
+            <div className="flex items-center my-4">
+              <ContentMain>
+                <div className="flex flex-col w-full">
+                  <form className="flex flex-col gap-4 w-full">
+                    <InputEmail label="Email" />
+                    <InputPassword label="Senha" />
+                    <div className="flex">
+                      <input
+                        type="checkbox"
+                        name="remember"
+                        className="w-4 mr-2 ml-2"
+                      />
+                      <p className="text-sm">Lembrar senha</p>
+                    </div>
+                  </form>
+                  <div className="flex flex-col items-center gap-2 mt-10">
+                    <p className="text-gray-main">Outra opção de login</p>
+                    <Button
+                      icon="google"
+                      style="light"
+                      text="Continuar com Google"
+                    />
+                  </div>
                 </div>
-              </form>
-              <div className="flex flex-col items-center gap-2 mt-10">
-                <p className="text-gray-main">Outra opção de login</p>
-                <Button
-                  icon="google"
-                  style="light"
-                  text="Continuar com Google"
-                />
-              </div>
+              </ContentMain>
             </div>
-          </ContentMain>
-        </div>
 
-        <ContentFooter>
-          <Button icon="false" style="dark" text="Só continuar" navigation="" />
-        </ContentFooter>
+            <ContentFooter>
+              <Button
+                icon="false"
+                style="dark"
+                text="Só continuar"
+                navigation=""
+              />
+            </ContentFooter>
+          </div>
+        </div>
       </Main>
 
       <Footer />

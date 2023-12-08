@@ -18,7 +18,9 @@ const Button = ({ style, text, icon = 'false', navigation }) => {
         {icon === 'google' && (
           <FontAwesomeIcon icon={faGoogle} style={{ color: '#000' }} />
         )}
-        <p className="text-sm sm:text-base">{text}</p>
+        <p className={icon === 'google' ? 'text-sm' : 'text-sm sm:text-base'}>
+          {text}
+        </p>
       </button>
     );
   } else {
