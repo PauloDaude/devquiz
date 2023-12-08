@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Main = props => {
   return (
-    <main className="container flex flex-col flex-1 h-full w-full mx-auto">
+    <main className="container flex flex-col flex-1 h-full mx-auto">
       {props.children}
     </main>
   );

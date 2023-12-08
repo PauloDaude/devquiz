@@ -8,7 +8,7 @@ import ContentHeader from '../components/ContentHeader';
 import ContentMain from '../components/ContentMain';
 import ContentNavigation from '../components/ContentNavigation';
 
-import { InputEmail, InputPassword } from '../components/LoginFields';
+import { InputEmail, InputPassword } from '../components/FormFields';
 
 import LoginImg from '../assets/login.svg';
 
@@ -19,7 +19,7 @@ const Login = () => {
 
       <Main>
         <ContentNavigation back="true" navigation="/welcome" />
-        <div className="flex flex-col md:flex-row justify-center md:gap-12">
+        <div className="flex flex-col md:flex-row justify-center md:gap-12 h-full">
           <ContentHeader
             title="Tá pertin já :)"
             subtitle="Só preencher os dados e pronto"
@@ -53,7 +53,6 @@ const Login = () => {
                 </div>
               </ContentMain>
             </div>
-
             <ContentFooter>
               <Button
                 icon="false"

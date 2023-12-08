@@ -12,7 +12,7 @@ import Footer from '../components/Footer';
 const Welcome = () => {
   return (
     <>
-      <Header />
+      <Header login="true" />
 
       <Main>
         <ContentNavigation />
@@ -24,7 +24,10 @@ const Welcome = () => {
 
         <ContentMain>
           <div className="flex">
-            <img src={end} />
+            <img
+              src={end}
+              className="max-w-[24rem] sm:max-w-[25rem] md:max-w-[30rem] w-full"
+            />
           </div>
         </ContentMain>
 
