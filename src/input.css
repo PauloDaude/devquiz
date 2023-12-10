@@ -23,3 +23,9 @@ button:focus {
   color: #000000;
   background-color: #FFBB45;
 }
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1024px;
+  }
+}

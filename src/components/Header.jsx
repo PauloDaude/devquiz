@@ -7,7 +7,7 @@ const Header = ({ login = 'false' }) => {
       className={
         login === 'true'
           ? 'p-6 max-h-20 max-w-7xl w-full mx-auto hidden sm:flex justify-between'
-          : 'flex justify-betweenp-6 max-h-20 max-w-7xl w-full mx-auto'
+          : 'p-6 flex max-h-20 max-w-7xl w-full mx-auto'
       }
     >
       <img src={Logo} alt="Logo DevQuiz" className="w-[187px]" />
