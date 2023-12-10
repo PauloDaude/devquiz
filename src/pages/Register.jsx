@@ -55,14 +55,14 @@ const Register = () => {
 
       <Main>
         <ContentNavigation back="true" navigation="/welcome" />
-        <div className="flex flex-col md:flex-row justify-between md:gap-12 h-full">
+        <div className="flex flex-col md:flex-row justify-center md:gap-12 flex-grow md:flex-grow-0 xl:max-w-5xl mx-auto w-full">
           <ContentHeader
             title="Cria tua conta ae :)"
             subtitle="Só preencher os dados e pronto"
             img={RegisterImg}
           />
 
-          <div className="flex flex-col">
+          <div className="flex flex-col flex-grow">
             <div className="flex items-center my-4">
               <ContentMain>
                 <form

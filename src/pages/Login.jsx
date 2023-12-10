@@ -19,14 +19,14 @@ const Login = () => {
 
       <Main>
         <ContentNavigation back="true" navigation="/welcome" />
-        <div className="flex flex-col md:flex-row justify-center md:gap-12 h-full">
+        <div className="flex flex-col md:flex-row justify-center md:gap-12 flex-grow md:flex-grow-0 h-full mx-auto xl:max-w-5xl w-full">
           <ContentHeader
             title="Tá pertin já :)"
             subtitle="Só preencher os dados e pronto"
             img={LoginImg}
           />
 
-          <div className="flex flex-col md:mt-14">
+          <div className="flex flex-col md:mt-14 flex-grow">
             <div className="flex items-center my-4">
               <ContentMain>
                 <div className="flex flex-col w-full">
