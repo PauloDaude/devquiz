@@ -113,17 +113,16 @@ const Register = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                   />
-                  {/* <input
-                    type="submit"
-                    value="enviar"
-                    className="bg-red-500 text-amber-100"
-                  /> */}
                 </form>
               </ContentMain>
             </div>
 
             <ContentFooter>
-              <Button style="dark" text="Só continuar" />
+              <Button
+                style="dark"
+                text="Só continuar"
+                handleSubmit={handleSubmit}
+              />
             </ContentFooter>
           </div>
         </div>

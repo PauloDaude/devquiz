@@ -6,14 +6,22 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 import PropTypes from 'prop-types';
 
-const Button = ({ style, text, icon = 'false', navigation }) => {
+const Button = ({ style, text, icon = 'false', navigation, handleSubmit }) => {
   const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    if (navigation) {
+      navigate(navigation);
+    } else if (handleSubmit) {
+      handleSubmit();
+    }
+  };
 
   if (style === 'light') {
     return (
       <button
         className="flex justify-center items-center bg-gray-bg w-full sm:max-w-[21.4375rem] p-4 mb-4 sm:mb-0 rounded-full font-bold shadow-gray gap-2 hover:bg-gray-200 transition-all"
-        onClick={() => navigate(navigation)}
+        onClick={handleButtonClick}
       >
         {icon === 'google' && (
           <FontAwesomeIcon icon={faGoogle} style={{ color: '#000' }} />
@@ -27,7 +35,7 @@ const Button = ({ style, text, icon = 'false', navigation }) => {
     return (
       <button
         className="flex justify-center items-center bg-black text-white w-full sm:max-w-[21.4375rem] p-4 rounded-full font-bold shadow-yellow gap-2 hover:bg-[#1e2029] transition-all"
-        onClick={() => navigate(navigation)}
+        onClick={handleButtonClick}
       >
         {icon === 'true' && (
           <FontAwesomeIcon icon={faBolt} style={{ color: '#ffffff' }} />
@@ -41,7 +49,8 @@ const Button = ({ style, text, icon = 'false', navigation }) => {
 Button.propTypes = {
   style: PropTypes.oneOf(['light', 'dark']),
   text: PropTypes.string,
-  icon: PropTypes.oneOf(['true', 'false'])
+  icon: PropTypes.oneOf(['true', 'false']),
+  handleSubmit: PropTypes.func
 };
 Button.propTypes = {
   navigation: PropTypes.string
