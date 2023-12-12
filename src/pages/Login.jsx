@@ -42,14 +42,6 @@ const Login = () => {
                       <p className="text-sm">Lembrar senha</p>
                     </div>
                   </form>
-                  <div className="flex flex-col items-center gap-2 mt-10">
-                    <p className="text-gray-main">Outra opção de login</p>
-                    <Button
-                      icon="google"
-                      style="light"
-                      text="Continuar com Google"
-                    />
-                  </div>
                 </div>
               </ContentMain>
             </div>
