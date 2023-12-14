@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Footer from '../components/Footer';
@@ -9,10 +11,46 @@ import ContentMain from '../components/ContentMain';
 import ContentNavigation from '../components/ContentNavigation';
 
 import { InputEmail, InputPassword } from '../components/FormFields';
+import { useFormik } from 'formik';
+import { schemaLogin } from '../validations/registerValidation';
 
 import LoginImg from '../assets/login.svg';
 
+const onSubmit = async ({ email, password }, actions) => {
+  console.log(email);
+  console.log(password);
+
+  await new Promise(resolve => setTimeout(resolve, 500));
+
+  actions.resetForm();
+
+  try {
+    const response = await axios.post('/users/login', {
+      email: email,
+      password: password
+    });
+
+    if (response.status === 200) {
+      console.log('Login bem sucedido!');
+    } else {
+      console.log('Dados de login inválidos! Tente novamente.');
+    }
+  } catch (err) {
+    console.error('Erro ao tentar fazer o login', err.message);
+  }
+};
+
 const Login = () => {
+  const { values, isSubmitting, handleChange, handleSubmit, errors } =
+    useFormik({
+      initialValues: {
+        email: '',
+        password: ''
+      },
+      validationSchema: schemaLogin,
+      onSubmit
+    });
+
   return (
     <>
       <Header login="true" />
@@ -30,9 +68,23 @@ const Login = () => {
             <div className="flex items-center my-4">
               <ContentMain>
                 <div className="flex flex-col w-full">
-                  <form className="flex flex-col gap-4 w-full">
-                    <InputEmail label="Email" />
-                    <InputPassword label="Senha" />
+                  <form
+                    onSubmit={handleSubmit}
+                    method="post"
+                    className="flex flex-col gap-4 w-full"
+                  >
+                    <InputEmail
+                      label="Email"
+                      value={values.email}
+                      onChange={handleChange}
+                      error={errors.email ? errors.email : null}
+                    />
+                    <InputPassword
+                      label="Senha"
+                      value={values.password}
+                      onChange={handleChange}
+                      error={errors.password ? errors.password : null}
+                    />
                     <div className="flex">
                       <input
                         type="checkbox"
@@ -50,7 +102,8 @@ const Login = () => {
                 icon="false"
                 style="dark"
                 text="Só continuar"
-                navigation=""
+                handleSubmit={handleSubmit}
+                isSubmitting={isSubmitting}
               />
             </ContentFooter>
           </div>

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+// import { useNavigate } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -13,28 +14,32 @@ import Button from '../components/Button';
 import Main from '../components/Main';
 
 import { auth, provider } from '../firebase/config';
-import { signInWithPopup } from 'firebase/auth';
+import { signInWithRedirect, getRedirectResult } from 'firebase/auth';
 
 const Welcome = () => {
-  const [user, setUser] = useState({});
+  // const navigation = useNavigate();
 
   const handleClickButton = () => {
-    signInWithPopup(auth, provider)
-      .then(data => {
-        setUser({
-          name: data.user.displayName,
-          email: data.user.email,
-          userPhoto: data.user.photoURL
-        });
+    signInWithRedirect(auth, provider);
+    // navigation('/end-register');
+  };
+
+  useEffect(() => {
+    getRedirectResult(auth)
+      .then(result => {
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            name: result.user.displayName,
+            email: result.user.email,
+            userPhoto: result.user.photoURL
+          })
+        );
       })
       .catch(err => {
         console.log(err);
       });
-  };
-
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  }, []);
 
   return (
     <>

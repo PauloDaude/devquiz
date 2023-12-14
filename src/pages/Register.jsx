@@ -19,12 +19,12 @@ import Footer from '../components/Footer';
 import RegisterImg from '../assets/register.svg';
 
 import { useFormik } from 'formik';
-import { schema } from '../validations/registerValidation';
+import { schemaRegister } from '../validations/registerValidation';
 
 const onSubmit = async (values, actions) => {
   console.log(values);
   console.log(actions);
-  await Promise(resolve => setTimeout(resolve, 1000));
+  await new Promise(resolve => setTimeout(resolve, 500));
   actions.resetForm();
 };
 
@@ -32,7 +32,7 @@ const Register = () => {
   const {
     values,
     errors,
-    // isSubmitting,
+    isSubmitting,
     touched,
     handleChange,
     handleBlur,
@@ -45,7 +45,7 @@ const Register = () => {
       name: '',
       country: 'Brazil'
     },
-    validationSchema: schema,
+    validationSchema: schemaRegister,
     onSubmit
   });
 
@@ -122,6 +122,7 @@ const Register = () => {
                 style="dark"
                 text="Só continuar"
                 handleSubmit={handleSubmit}
+                isSubmitting={isSubmitting}
               />
             </ContentFooter>
           </div>
