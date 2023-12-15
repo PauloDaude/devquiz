@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import PropTypes from 'prop-types';
 
 const Main = props => {
@@ -6,7 +7,9 @@ const Main = props => {
       className={
         props.profile === 'true'
           ? 'container flex flex-col flex-1 w-full h-full mx-auto mb-14 sm:mb-0 sm:max-w-[768px]'
-          : 'container flex flex-col flex-1 w-full h-full mx-auto mb-14 sm:mb-0'
+          : props.logged == 'true'
+          ? 'container flex flex-col flex-1 w-full h-full mx-auto mb-14 sm:mb-0'
+          : 'container flex flex-col flex-1 w-full h-full mx-auto sm:mb-0'
       }
     >
       {props.children}
@@ -16,7 +19,8 @@ const Main = props => {
 
 Main.propTypes = {
   children: PropTypes.node,
-  profile: PropTypes.string
+  profile: PropTypes.string,
+  logged: PropTypes.string
 };
 
 export default Main;

@@ -12,7 +12,7 @@ const Create = () => {
       <Main>
         <ContentNavigation back="true" navigation="/home" />
         <ContentMain>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center text-center">
             <h1 className="text-3xl font-medium">
               Logo em breve haverá conteúdo aqui! 😉
             </h1>

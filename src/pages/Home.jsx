@@ -120,7 +120,7 @@ const Home = () => {
     <>
       <Header />
 
-      <Main>
+      <Main logged="true">
         <ContentNavigation home="true" />
 
         <ContentHeader

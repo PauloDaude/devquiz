@@ -48,7 +48,7 @@ const Header = ({ login = 'false' }) => {
       ) : (
         <div className="flex justify-end items-center gap-4 md:gap-7 w-4/6">
           <SearchInput />
-          <nav className="hidden sm:flex gap-10 justify-end min-w-[310px]">
+          <nav className="hidden sm:flex gap-10 justify-between min-w-[240px]">
             <NavLink
               to="/home"
               className={({ isActive }) => navClass(isActive)}
