@@ -17,19 +17,19 @@ import logoJS from '../assets/javascript-logo.png';
 // eslint-disable-next-line react/prop-types
 const DataProfile = ({ title, data }) => {
   return (
-    <dt className="text-gray-main text-sm">
+    <div className="text-gray-main text-sm">
       {title}
-      <dd className="font-bold text-black text-center text-lg">{data}</dd>
-    </dt>
+      <p className="font-bold text-black text-center text-lg">{data}</p>
+    </div>
   );
 };
 
 const Profile = () => {
   return (
     <>
-      <Header login="true" />
+      <Header />
 
-      <Main>
+      <Main profile="true">
         <ContentNavigation back="true" profile="true" navigation="/home" />
         <ContentHeader>
           <div className="flex flex-col items-center">
@@ -42,12 +42,12 @@ const Profile = () => {
             <p className="font-thin text-xs text-gray-label">@paulodaude</p>
           </div>
           <div className="flex my-4">
-            <dl className="flex justify-between w-full">
+            <div className="flex justify-between w-full">
               <DataProfile title="Jogadas" data="20" />
               <DataProfile title="Criados" data="4" />
               <DataProfile title="Seguidores" data="48" />
               <DataProfile title="Seguindo" data="14" />
-            </dl>
+            </div>
           </div>
           <button className="bg-black py-3 rounded-full text-white font-medium">
             Editar perfil
