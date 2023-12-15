@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
 import Header from '../components/Header';
@@ -17,11 +18,11 @@ import { auth, provider } from '../firebase/config';
 import { signInWithRedirect, getRedirectResult } from 'firebase/auth';
 
 const Welcome = () => {
-  // const navigation = useNavigate();
+  localStorage.clear();
+  const navigation = useNavigate();
 
   const handleClickButton = () => {
     signInWithRedirect(auth, provider);
-    // navigation('/end-register');
   };
 
   useEffect(() => {
@@ -35,6 +36,7 @@ const Welcome = () => {
             userPhoto: result.user.photoURL
           })
         );
+        navigation('/end-register');
       })
       .catch(err => {
         console.log(err);

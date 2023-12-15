@@ -67,10 +67,10 @@ const Header = ({ login = 'false' }) => {
             >
               Perfil
             </NavLink>
-            <Link to="/welcome" className="hover:text-red-600 transition-all">
-              Sair
-            </Link>
           </nav>
+          <Link to="/welcome" className="hover:text-red-600 transition-all">
+            Sair
+          </Link>
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
             className="text-[1.25rem] md:text-xl sm:hidden"

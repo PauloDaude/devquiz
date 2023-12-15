@@ -32,7 +32,7 @@ const Welcome = () => {
         </ContentMain>
 
         <ContentFooter>
-          <Button style="dark" text="Boraaaa!" />
+          <Button style="dark" text="Boraaaa!" navigation="/home" />
         </ContentFooter>
       </Main>
 
