@@ -4,6 +4,7 @@ import NotFound from './pages/NotFound';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import EndRegister from './pages/EndRegister';
+import Home from './pages/Home';
 
 const RoutesApp = () => {
   return (
@@ -13,6 +14,7 @@ const RoutesApp = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/end-register" element={<EndRegister />} />
+        <Route path="/home" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

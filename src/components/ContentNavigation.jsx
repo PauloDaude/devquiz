@@ -4,9 +4,15 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-const ContentNavigation = ({ back = 'false', navigation }) => {
+const ContentNavigation = ({ back = 'false', navigation, home }) => {
   return (
-    <div className="flex p-4 items-center justify-start box-border h-14 ">
+    <div
+      className={
+        home === 'true'
+          ? 'h-5'
+          : 'flex p-4 items-center justify-start box-border h-14'
+      }
+    >
       {back === 'true' && (
         <>
           <Link to={navigation} className="flex flex-row items-center">
@@ -20,11 +26,9 @@ const ContentNavigation = ({ back = 'false', navigation }) => {
 };
 
 ContentNavigation.propTypes = {
-  back: PropTypes.oneOf(['true', 'false'])
-};
-
-ContentNavigation.propTypes = {
-  navigation: PropTypes.string
+  back: PropTypes.oneOf(['true', 'false']),
+  navigation: PropTypes.string,
+  home: PropTypes.oneOf(['true', 'false'])
 };
 
 export default ContentNavigation;
