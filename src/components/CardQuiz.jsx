@@ -20,8 +20,8 @@ const CardQuiz = () => {
   };
 
   return (
-    <div className="flex flex-1 flex-col items-start justify-end min-w-[120px] w-full max-w-[160px]">
-      <div
+    <div className="flex flex-1 flex-col items-start justify-end min-w-[120px] sm:min-w-[170px] w-full max-w-[160px]">
+      <button
         style={cardStyle}
         className="h-[100px] w-full rounded-2xl relative text-white"
       >
@@ -31,7 +31,7 @@ const CardQuiz = () => {
         >
           <p>Paulo D.</p>
         </div>
-      </div>
+      </button>
       <p className="text-sm font-medium mt-1">Teste seu nível de Python</p>
     </div>
   );

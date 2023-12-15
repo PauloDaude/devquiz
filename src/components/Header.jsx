@@ -10,17 +10,20 @@ const Header = ({ login = 'false' }) => {
     <header
       className={
         login === 'true'
-          ? 'p-6 max-h-20 max-w-7xl w-full mx-auto hidden sm:flex justify-between'
-          : 'p-6 flex max-h-20 max-w-7xl w-full mx-auto justify-between'
+          ? 'container p-6 max-h-20 max-w-7xl w-full mx-auto hidden sm:flex justify-between'
+          : 'container p-6 flex max-h-20 max-w-7xl w-full mx-auto justify-between'
       }
     >
-      <img src={Logo} alt="Logo DevQuiz" className="w-[8.5rem]" />
+      <img src={Logo} alt="Logo DevQuiz" className="w-[9rem] md:w-[10rem]" />
       {login === 'true' ? (
         <p className="text-sm">Centro de segurança</p>
       ) : (
-        <div className="flex justify-center items-center gap-4">
-          <FontAwesomeIcon icon={faMagnifyingGlass} size="lg" />
-          <FontAwesomeIcon icon={faBell} size="lg" />
+        <div className="flex justify-center items-center gap-4 md:gap-7">
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className="text-[1.25rem] md:text-xl"
+          />
+          <FontAwesomeIcon icon={faBell} className="text-[1.3rem] md:text-xl" />
         </div>
       )}
     </header>

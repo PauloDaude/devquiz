@@ -25,9 +25,9 @@ const Home = () => {
         />
 
         <ContentMain>
-          <div className="flex flex-col items-start w-full h-full py-4">
+          <div className="flex flex-col items-start sm:items-center w-full h-full py-4">
             <h3 className="text-lg font-semibold">Galeria de Quizzes</h3>
-            <div className="flex w-full flex-wrap gap-3 mt-1">
+            <div className="flex sm:justify-center w-full flex-wrap gap-3 mt-1 sm:mt-4">
               {quizzes.map(quiz => (
                 <CardQuiz key={quiz} />
               ))}
