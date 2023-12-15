@@ -6,11 +6,29 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
+const SearchInput = () => {
+  return (
+    <>
+      <div className="w-full items-center px-2 text-gray-label bg-gray-bg rounded gap-3 max-w-[250px] hidden sm:flex">
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          className="text-[1.25rem] sm:text-base hidden sm:block text-gray-label"
+        />
+        <input
+          type="text"
+          className="w-full bg-gray bg-gray-bg rounded placeholder:text-sm text-black text-sm py-1"
+          placeholder="Pesquisar quiz"
+        />
+      </div>
+    </>
+  );
+};
+
 const Header = ({ login = 'false' }) => {
   const headerClass =
     login === 'true'
-      ? 'container p-6 max-h-20 max-w-7xl w-full mx-auto hidden sm:flex justify-between'
-      : 'container p-6 flex max-h-20 max-w-7xl w-full mx-auto justify-between';
+      ? 'container p-6 max-h-20 max-w-7xl w-full mx-auto sm:flex justify-between items-center hidden'
+      : 'container p-6 flex max-h-20 max-w-7xl w-full mx-auto justify-between items-center';
 
   const navClass = isActive =>
     isActive ? 'text-yellow-main' : 'transition-all hover:text-yellow-main';
@@ -28,8 +46,9 @@ const Header = ({ login = 'false' }) => {
       {login === 'true' ? (
         <p className="text-sm">Centro de segurança</p>
       ) : (
-        <div className="flex justify-center items-center gap-4 md:gap-7">
-          <nav className="hidden sm:flex gap-10">
+        <div className="flex justify-end items-center gap-4 md:gap-7 w-4/6">
+          <SearchInput />
+          <nav className="hidden sm:flex gap-10 justify-end min-w-[310px]">
             <NavLink
               to="/home"
               className={({ isActive }) => navClass(isActive)}
