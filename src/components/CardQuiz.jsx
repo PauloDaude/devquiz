@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-const CardQuiz = ({ img, author, title }) => {
+const CardQuiz = ({ img, author, title, onClick }) => {
   const cardStyle = {
     backgroundImage: `url(${img})`,
     backgroundSize: '90px',
@@ -21,6 +21,7 @@ const CardQuiz = ({ img, author, title }) => {
   return (
     <div className="flex flex-1 flex-col items-start justify-start min-w-[120px] sm:min-w-[170px] w-full max-w-[160px]">
       <button
+        onClick={onClick}
         style={cardStyle}
         className="h-[100px] w-full rounded-2xl relative text-white"
       >

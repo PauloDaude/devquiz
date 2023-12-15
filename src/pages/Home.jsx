@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import ContentHeader from '../components/ContentHeader';
 import ContentMain from '../components/ContentMain';
 import ContentNavigation from '../components/ContentNavigation';
@@ -16,8 +18,22 @@ import logoJS from '../assets/javascript-logo.png';
 import logoJAVA from '../assets/java-logo.png';
 import logoCSHARP from '../assets/csharp-logo.png';
 import logoGIT from '../assets/git-logo.png';
+import Popup from '../components/Popup';
 
 const Home = () => {
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [selectedQuiz, setSelectedQuiz] = useState(null);
+
+  const openPopup = quiz => {
+    setSelectedQuiz(quiz); // Armazena o quiz selecionado
+    setPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+    setSelectedQuiz(null); // Limpa o quiz selecionado ao fechar o popup
+  };
+
   const quizzes = [
     {
       id: 1,
@@ -116,9 +132,25 @@ const Home = () => {
           <div className="flex flex-col items-start sm:items-center w-full h-full py-4">
             <h3 className="text-lg font-semibold">Galeria de Quizzes</h3>
             <div className="flex sm:justify-center w-full flex-wrap gap-3 mt-1 sm:mt-4">
+              <Popup visible={popupVisible} onClose={closePopup}>
+                {selectedQuiz && (
+                  <div className="flex flex-col items-center bg-white shadow-lg z-10 rounded-xl">
+                    <h2 className="font-semibold text-lg p-5 bg-yellow-main rounded-t-xl">
+                      Quiz indisponível no momento para jogar :(
+                    </h2>
+                    <div className="flex flex-col items-center py-4">
+                      <h3 className="font-semibold text-lg ">
+                        {selectedQuiz.title}
+                      </h3>
+                      <p>Autor: {selectedQuiz.author}</p>
+                    </div>
+                  </div>
+                )}
+              </Popup>
               {quizzes.map(quiz => (
                 <CardQuiz
                   key={quiz.id}
+                  onClick={() => openPopup(quiz)}
                   img={quiz.img}
                   author={quiz.author}
                   title={quiz.title}

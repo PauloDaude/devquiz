@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import EndRegister from './pages/EndRegister';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Create from './pages/Create';
 
 const RoutesApp = () => {
   return (
@@ -17,6 +18,7 @@ const RoutesApp = () => {
         <Route path="/end-register" element={<EndRegister />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/create" element={<Create />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
