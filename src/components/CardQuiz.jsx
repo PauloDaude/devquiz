@@ -1,8 +1,7 @@
-import logoPython from '../assets/python-logo.png';
-
-const CardQuiz = () => {
+// eslint-disable-next-line react/prop-types
+const CardQuiz = ({ img, author, title }) => {
   const cardStyle = {
-    backgroundImage: `url(${logoPython})`,
+    backgroundImage: `url(${img})`,
     backgroundSize: '90px',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -20,7 +19,7 @@ const CardQuiz = () => {
   };
 
   return (
-    <div className="flex flex-1 flex-col items-start justify-end min-w-[120px] sm:min-w-[170px] w-full max-w-[160px]">
+    <div className="flex flex-1 flex-col items-start justify-start min-w-[120px] sm:min-w-[170px] w-full max-w-[160px]">
       <button
         style={cardStyle}
         className="h-[100px] w-full rounded-2xl relative text-white"
@@ -29,10 +28,10 @@ const CardQuiz = () => {
           style={overlayStyle}
           className="flex items-end rounded-2xl h-full  px-4 py-2"
         >
-          <p>Paulo D.</p>
+          <p>{author}</p>
         </div>
       </button>
-      <p className="text-sm font-medium mt-1">Teste seu nível de Python</p>
+      <p className="text-sm font-medium mt-1">{title}</p>
     </div>
   );
 };
